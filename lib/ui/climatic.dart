@@ -169,9 +169,11 @@ class ChangeCity extends StatelessWidget {
               new ListTile(
                 title: new FlatButton(
                     onPressed: () {
-                      Navigator.pop(context, {
-                        'enter': _cityFieldController.text
-                      });
+                      if (_cityFieldController.text.isNotEmpty) {
+                        Navigator.pop(context, {
+                          'enter': _cityFieldController.text
+                        });
+                      }
                     },
                     textColor: Colors.white70,
                     color: Colors.redAccent,
